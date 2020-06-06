@@ -35,7 +35,7 @@ namespace Calculator
 
         private void actionButton_Click(object sender, EventArgs e)
         {
-            resultTextBox.Clear();
+          
         }
     }
 }
