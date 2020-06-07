@@ -23,13 +23,14 @@ namespace Calculator
 
         private void button_Click(object sender, EventArgs e)
         {
-            if(resultTextBox.Text == "0" || operActive==true)
+            if((resultTextBox.Text == "0") || (operActive))
             {
                 resultTextBox.Clear();
             }
+            operActive = false;
             Button button = (Button)sender;
             resultTextBox.Text += button.Text;
-            showResLabel.Text = val + " " + oper;
+
         }
 
         private void button17_Click(object sender, EventArgs e)
@@ -44,7 +45,7 @@ namespace Calculator
             oper = button.Text;
             operActive = true;
             val = Double.Parse(resultTextBox.Text);
-
+            showResLabel.Text = val + " " + oper;
         }
 
         private void button18_Click(object sender, EventArgs e)
@@ -52,7 +53,8 @@ namespace Calculator
             showResLabel.Text = "";
             switch (oper){
                 case "+":
-                    resultTextBox.Text = val + Double.Parse(resultTextBox.Text).ToString();
+                    Double add = val + Double.Parse(resultTextBox.Text);
+                    resultTextBox.Text = add.ToString();
                     break;
                 case "-":
                     Double min = val - Double.Parse(resultTextBox.Text);
@@ -69,6 +71,12 @@ namespace Calculator
                 default:
                     break;
             }
+        }
+
+        private void button16_Click(object sender, EventArgs e)
+        {
+            resultTextBox.Text = "0";
+            val = 0;
         }
     }
 }

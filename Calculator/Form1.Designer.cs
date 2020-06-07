@@ -251,6 +251,7 @@
             this.button16.TabIndex = 18;
             this.button16.Text = "C";
             this.button16.UseVisualStyleBackColor = true;
+            this.button16.Click += new System.EventHandler(this.button16_Click);
             // 
             // button17
             // 
