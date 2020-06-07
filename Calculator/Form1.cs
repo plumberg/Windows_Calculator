@@ -29,7 +29,7 @@ namespace Calculator
 
         private void button17_Click(object sender, EventArgs e)
         {
-            resultTextBox.Clear();
+           // resultTextBox.Clear();
             resultTextBox.Text = "0";
         }
 
